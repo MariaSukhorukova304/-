@@ -57,22 +57,21 @@ with plt.xkcd():
     plt.title(input('О чём диаграмма?'))
 
 n = 'plt.show()'
-eval(n) #искренне не понимаю, что нужно делать с использование eval()
+eval(n) #искренне не понимаю, что нужно делать с использованием eval()
 '''
 
 #5
-'''
+'
 import matplotlib.pyplot as plt
 import numpy as np
 
 x = [1, 2, 3, 4, 5, 6]
 y = [1, 1.42, 1.76, 2, 2.24, 2.5]
-p2, v2 = np.polyfit(x, y, deg=2, cov=True)
-#plt.scatter(p2, v2)
-print(p2, v2)
-p3, v3 = np.polyfit(x, y, deg=3, cov=True)
-#plt.scatter(p3, v3)
-plt.errorbar(x, y, xerr=0.05, yerr=0.1)
+p2, v2 = np.polyfit(x, y, deg=1, cov=True)
+p_f = np.poly1d(p)
+z=p_f([1, 2, 3, 4, 5])
+#p3, v3 = np.polyfit(x, y, deg=3, cov=True)
+#plt.errorbar(x, y, xerr=0.05, yerr=0.1)
+plt.plot(x, eval('y'))
 plt.grid()
 plt.show()
-'''
