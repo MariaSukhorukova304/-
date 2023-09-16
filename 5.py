@@ -70,10 +70,11 @@ xx = []
 yy = []
 for i in range(len(x)):
     p, v = np.polyfit(x, y, deg=1, cov=True)
-    xx += [p[0]]
-    yy += [p[1]]
-print(xx)
-plt.scatter(xx, yy)
+    p_f = str(np.poly1d(p)).split()
+    
+    print(float(p_f[0]))
+plt.plot(x, float(p_f[0])*x+float(p_f[3]))
 plt.errorbar(x, y, xerr=0.05, yerr=0.1)
 plt.grid()
 plt.show()
+
