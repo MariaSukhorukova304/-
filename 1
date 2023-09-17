@@ -1,11 +1,8 @@
 # 1
-
-"""
 import numpy as np
 x = 0
 y = np.log((1/(np.e*np.sin(x+1)))/(1.25+(1/x**15)))/np.log(1+x**2)
 print(y)
-"""
 
 # Theory
 """
@@ -19,56 +16,3 @@ plt.title(r'$f_1(x)=\sin(x),\ f_2(x)=x**2$')  #could be replased: plt.plot(x, np
 plt.grid(True)
 plt.show()
 """
-# 2
-import numpy as np
-import matplotlib.pyplot as plt
-
-x = np.arange(-10, 10, 0.001)
-plt.hlines(0, -10, 10, colors='red')
-plt.plot(x, x**2 - x - 6)
-plt.show()
-
-#3
-'''
-import numpy as np
-import matplotlib.pyplot as plt
-
-x = np.arange(-100, 100, 0.001)
-plt.plot(x, np.log(x**2 + 1)/np.log(1+np.tan(1/(1+np.sin(x)**2)))*np.exp(abs(x)/(-10)))
-plt.show()
-'''
-
-#4
-'''
-import numpy as np
-import matplotlib.pyplot as plt
-
-#data = input().split('')
-plt.figure(num=1, figsize=(6, 6))
-plt.axes(aspect=1)
-with plt.xkcd():
-    piesize = [int(a) for a in input('Введите процентное соотношение через пробел').split()]
-    labelsin = input('Введите подписи через ";"').split(';')
-
-    plt.pie(piesize, labels=labelsin)
-    plt.title(input('О чём диаграмма?'))
-
-n = 'plt.show()'
-eval(n) #искренне не понимаю, что нужно делать с использованием eval()
-'''
-
-#5
-'
-import matplotlib.pyplot as plt
-import numpy as np
-
-x = [1, 2, 3, 4, 5, 6]
-y = [1, 1.42, 1.76, 2, 2.24, 2.5]
-p2, v2 = np.polyfit(x, y, deg=1, cov=True)
-p_f = np.poly1d(p)
-z=p_f([1, 2, 3, 4, 5])
-#p3, v3 = np.polyfit(x, y, deg=3, cov=True)
-#plt.errorbar(x, y, xerr=0.05, yerr=0.1)
-plt.plot(x, eval('y'))
-plt.grid()
-plt.show()
