@@ -1,0 +1,13 @@
+import turtle
+from math import pi, sin, cos
+
+for i in range(3, 13):
+    turtle.pendown()
+    turtle.left(360/(i))
+    for _ in range(i-1):
+        turtle.forward(10 * i)
+        turtle.left(360/(i))
+    turtle.forward(10 * i)
+    turtle.right(360/2*i)
+    turtle.penup()
+    turtle.forward(10 * i)
