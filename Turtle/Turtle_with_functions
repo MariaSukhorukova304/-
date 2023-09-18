@@ -1,13 +1,25 @@
 import turtle
-from math import pi, sin, cos
+import math
 
-for i in range(3, 13):
-    turtle.pendown()
-    turtle.left(360/(i))
-    for _ in range(i-1):
-        turtle.forward(10 * i)
-        turtle.left(360/(i))
-    turtle.forward(10 * i)
-    turtle.right(360/2*i)
-    turtle.penup()
-    turtle.forward(10 * i)
+#Polygonals
+'''
+def poly():                                       
+    for _ in range(i):                                     
+        turtle.left((180 - 360 / i) / 2)                   
+        turtle.left(360 / i)                               
+        turtle.forward(2 * 20 * (i - 2) * math.sin(math.pi/i))                                       
+        turtle.right((180 - 360 / i) / 2)
+
+
+turtle.up()
+turtle.goto(20, 0)
+turtle.down()
+
+for i in range(3, 14):
+    poly()
+    turtle.up()
+    turtle.goto(20 * (i - 1), 0)
+    turtle.down()
+
+'''
+
