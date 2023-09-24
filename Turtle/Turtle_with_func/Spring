@@ -1,0 +1,13 @@
+import turtle
+import math
+
+
+turtle.speed(100)
+def Arc():
+    for _ in range(10):
+        turtle.circle(30, 180, 100)
+        turtle.circle(10, 180, 100)
+
+
+Arc()
+turtle.exitonclick()

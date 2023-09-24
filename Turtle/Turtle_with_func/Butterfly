@@ -1,0 +1,15 @@
+import turtle
+import math
+
+
+def Bfly():
+    for i in range(15):
+        turtle.right(90)
+        turtle.circle(20 + i * 10)
+        turtle.left(180)
+        turtle.circle(20 + i * 10)
+        turtle.left(90)
+
+
+Bfly()
+turtle.exitonclick()

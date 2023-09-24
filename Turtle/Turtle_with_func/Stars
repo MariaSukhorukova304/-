@@ -1,0 +1,13 @@
+import turtle
+import math
+
+
+def star():
+    n = int(input('Количество вершин'))
+    for _ in range(n):
+        turtle.left(180 - (180 / n))
+        turtle.forward(200)
+
+
+star()
+turtle.exitonclick()

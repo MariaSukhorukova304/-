@@ -1,0 +1,15 @@
+#Flower
+import turtle
+import math
+
+
+def flower():
+    for i in range(n):
+        turtle.circle(30)
+        turtle.left(360/n)
+
+
+turtle.shape('turtle')
+n = int(input('сколько лепестков?'))
+flower()
+turtle.exitonclick()
