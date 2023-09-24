@@ -1,0 +1,11 @@
+import turtle
+
+
+n = int(input('type number of legs'))
+for _ in range(n):
+    turtle.forward(150)
+    turtle.stamp()
+    turtle.right(180)
+    turtle.forward(150)
+    turtle.right(180)
+    turtle.right(360/n)

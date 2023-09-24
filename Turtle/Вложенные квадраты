@@ -1,0 +1,14 @@
+import turtle
+
+
+for i in range(10):
+    turtle.pendown()
+    for _ in range(3):
+        turtle.forward(10*i)
+        turtle.right(90)
+    turtle.forward(10*i)
+    turtle.penup()
+    turtle.forward(5)
+    turtle.left(90)
+    turtle.forward(5)
+    turtle.left(180)
