@@ -1,0 +1,3 @@
+coord = open('coord.txt', 'r')
+coord = coord.rstrip()
+print(coord)
