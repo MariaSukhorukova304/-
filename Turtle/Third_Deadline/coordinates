@@ -1,3 +1,17 @@
-coord = open('coord.txt', 'r')
-coord = coord.rstrip()
-print(coord)
+import turtle as t
+
+
+with open('coord.txt') as c:
+    
+    for i in list(input('type number')):
+        i = int(i)
+        a = c.readline(i)
+    for j in range(len(a)):
+        if int(a[j]) > 20:
+            t.left(int(a[j]))
+        elif a[j] == '0':
+            t.up()
+        elif a[j] == '1':
+            t.down()
+        else:
+            t.forward(int(a[j]))
