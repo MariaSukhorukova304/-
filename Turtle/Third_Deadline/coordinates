@@ -6,8 +6,11 @@ with open('coord.txt') as c:
     for i in list(input('type number')):
         i = int(i)
         a = c.readlines()
+
     for j in range(len(a[i])):
-        if a[i][j] > 20:
+        a1 = [int(item) for item in a[j][:-2].split(', ')]
+        print(a1)
+        if a1[j] > 20:
             t.left(a[i][j])
         elif a[i][j] == 0:
             t.up()
