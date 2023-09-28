@@ -11,10 +11,10 @@ with open('coord.txt') as c:
         a1 = [int(item) for item in a[j][:-2].split(', ')]
         print(a1)
         if a1[j] > 20:
-            t.left(a[i][j])
-        elif a[i][j] == 0:
+            t.left(a1[j])
+        elif a1[j] == 0:
             t.up()
-        elif a[i][j] == 1:
+        elif a1[j] == 1:
             t.down()
         else:
-            t.forward(a[i][j])
+            t.forward(a1[j])
