@@ -1,1 +1,50 @@
-from Theory.py import Rect
+class DNA:
+    def __init__(self, string):
+        self.string = string
+
+
+    def count_nucleotides(self):
+        adenine = len(self.string.split('A'))
+        thymine = len(self.string.split('T'))
+        cytosine = len(self.string.split('C'))
+        guanine = len(self.string.split('G'))
+        return {'A': adenine, 'T': thymine, 'C': cytosine, 'G': guanine}
+
+
+    def transcribe(self):
+        return self.string.split('T').join('U')
+    
+
+    def complement_dna(self):
+        string = self.string.split('T').join('a')
+        string = self.string.split('A').join('t')
+        string = self.string.split('G').join('c')
+        string = self.string.split('C').join('g')
+        return string.upper()
+    
+
+    def hamming_distance(self, s2):
+        h = 0
+        if len(s2) == len(self.string):
+            for i in range(len(self.string)):
+                if list(self.string)[i] != list(s2)[i]:
+                    h += 1
+            return h
+        else:
+            return 'Строки не совпадают по длинам'
+            
+
+        
+
+class RNA(object):
+    def __init__(self, string):
+        pass
+
+
+    def transcribe(self):
+        return self.string.split('U').join('T')
+    
+
+
+d = DNA('ATGCAAAA')
+print(d.count_nucleotides())
