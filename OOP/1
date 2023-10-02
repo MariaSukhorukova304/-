@@ -4,22 +4,23 @@ class DNA:
 
 
     def count_nucleotides(self):
-        adenine = len(self.string.split('A'))
-        thymine = len(self.string.split('T'))
-        cytosine = len(self.string.split('C'))
-        guanine = len(self.string.split('G'))
+        adenine = len(self.string.split('A')) - 1
+        thymine = len(self.string.split('T')) - 1
+        cytosine = len(self.string.split('C')) - 1
+        guanine = len(self.string.split('G')) - 1
         return {'A': adenine, 'T': thymine, 'C': cytosine, 'G': guanine}
 
 
     def transcribe(self):
-        return self.string.split('T').join('U')
+        return 'U'.join(self.string.split('T'))
     
 
     def complement_dna(self):
-        string = self.string.split('T').join('a')
-        string = self.string.split('A').join('t')
-        string = self.string.split('G').join('c')
-        string = self.string.split('C').join('g')
+        string = self.string
+        string = 'a'.join(string.split('T'))
+        string = 't'.join(string.split('A'))
+        string = 'c'.join(string.split('G'))
+        string = 'g'.join(string.split('C'))
         return string.upper()
     
 
@@ -38,13 +39,13 @@ class DNA:
 
 class RNA(object):
     def __init__(self, string):
-        pass
+        self.string = string
 
 
     def transcribe(self):
-        return self.string.split('U').join('T')
+        return 'T'.join(self.string.split('U'))
     
 
 
-d = DNA('ATGCAAAA')
-print(d.count_nucleotides())
+d = RNA('UTGGAAAAUU')
+print(d.transcribe())
