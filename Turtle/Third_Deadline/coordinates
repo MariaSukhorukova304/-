@@ -6,15 +6,15 @@ with open('coord.txt') as c:
     for i in list(input('type number')):
         i = int(i)
         a = c.readlines()
-
-    for j in range(len(a[i])):
-        a1 = [int(item) for item in a[j][:-2].split(', ')]
+        a1 = [int(item) for item in a[i][:-2].split(', ')]
         print(a1)
-        if a1[j] > 20:
-            t.left(a1[j])
-        elif a1[j] == 0:
-            t.up()
-        elif a1[j] == 1:
-            t.down()
-        else:
-            t.forward(a1[j])
+        for j in a1:
+            if j > 20:
+                t.left(j)
+            elif j == 0:
+                t.up()
+            elif j == 1:
+                t.down()
+            else:
+                t.forward(j)
+                
