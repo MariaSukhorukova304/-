@@ -1,0 +1,36 @@
+from random import randint
+import turtle
+
+
+number_of_turtles = 10
+steps_of_time_number = 100
+
+
+pool = [turtle.Turtle(shape='circle') for i in range(number_of_turtles)]
+for unit in pool:
+    unit.penup()
+    unit.speed(randint(10, 100))
+    unit.goto(randint(-200, 200), randint(-200, 200))
+
+
+for i in range(steps_of_time_number):
+    for j in range(len(pool)):
+        angj = pool[j].heading()
+        xj, yj = pool[j].pos()
+        for k in range(len(pool)):  #пошли перебирать положение других
+            if k != j:
+                xk, yk = pool[k].pos()
+                angk = pool[k].heading()
+                dx = abs(xj - xk)
+                dy = abs(yj - yk)
+                if dx <= 3 and dy <= 3:  #совпадение
+                    pool[j].seth(angj)
+                    pool[k].seth(angk)
+                    pool[j].fd(5)
+                    pool[k].fd(5)
+        if xj > 200 or xj < -200:
+            pool[j].seth(180 - angj)
+        if xj > 200 or xj < -200:
+            pool[j].seth(180 - angj)
+        pool[j].fd(50)
+        pool[j].left(randint(0, 360))
