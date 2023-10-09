@@ -1,0 +1,11 @@
+import turtle
+
+x = 1
+y = 1
+turtle.goto(x, y)
+
+velocity = int(input('type speed of the turtle'))
+for i in range(150):
+    x += velocity * x
+    y += velocity * y - (9.8 * y ** 2) * 0.5
+    turtle.goto(x, y)
